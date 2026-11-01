@@ -1,0 +1,30 @@
+
+[
+  {
+    "id": "RB-001",
+    "type": "runbook",
+    "title": "Payment Provider Timeout Troubleshooting",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "When payment requests fail due to upstream provider timeouts, inspect dependency latency, request timeout settings, and recent provider errors. Check whether retries are increasing downstream traffic. Review trace spans for external HTTP calls. Avoid increasing timeout limits without understanding the upstream failure.",
+    "version": 1
+  },
+  {
+    "id": "RB-002",
+    "type": "runbook",
+    "title": "Database Connection Pool Exhaustion",
+    "service_id": "order-service",
+    "source": "synthetic",
+    "content": "Database connection pool exhaustion may cause elevated API latency and request failures. Inspect active database connections, pool utilization, connection acquisition timeouts, and slow queries. Check for long-running transactions and leaked connections before changing pool size.",
+    "version": 1
+  },
+  {
+    "id": "PM-001",
+    "type": "postmortem",
+    "title": "Historical Payment Service Dependency Failure",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "A previous payment service incident caused elevated HTTP 5xx errors and increased request latency. Investigation found that an external payment provider experienced high response times. Application retries amplified the issue. Engineers mitigated the incident by adjusting retry behavior and coordinating with the provider.",
+    "version": 1
+  }
+]
