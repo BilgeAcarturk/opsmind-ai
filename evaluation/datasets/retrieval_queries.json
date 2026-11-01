@@ -1,0 +1,31 @@
+
+{
+  "dataset_version": "0.1.0",
+  "label_level": "document",
+  "cases": [
+    {
+      "query_id": "Q-001",
+      "query": "payment provider timeout errors",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": "payment-service"
+    },
+    {
+      "query_id": "Q-002",
+      "query": "database connection pool exhaustion",
+      "relevant_document_ids": ["RB-002"],
+      "service_id": "order-service"
+    },
+    {
+      "query_id": "Q-003",
+      "query": "payment retries increased latency",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": "payment-service"
+    },
+    {
+      "query_id": "Q-004",
+      "query": "upstream dependency response time problems",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": "payment-service"
+    }
+  ]
+}

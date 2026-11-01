@@ -1,0 +1,56 @@
+{
+  "method": "keyword_overlap",
+  "evaluation_dataset_version": "0.1.0",
+  "dataset_hash": "a2581d38a0fd9de227c9473e93644b24bf682fe02ca9bff5b2c395c9dd013635",
+  "config_hash": "62fd7deb6e0de282e4934100b82d80b025645f42181b0012f4ae22db57c2942d",
+  "k": 2,
+  "query_count": 4,
+  "mean_precision_at_2": 0.875,
+  "mean_recall_at_2": 1.0,
+  "mrr": 1.0,
+  "results": [
+    {
+      "query_id": "Q-001",
+      "query": "payment provider timeout errors",
+      "retrieved_document_ids": [
+        "RB-001",
+        "PM-001"
+      ],
+      "precision_at_2": 1.0,
+      "recall_at_2": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query_id": "Q-002",
+      "query": "database connection pool exhaustion",
+      "retrieved_document_ids": [
+        "RB-002"
+      ],
+      "precision_at_2": 0.5,
+      "recall_at_2": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query_id": "Q-003",
+      "query": "payment retries increased latency",
+      "retrieved_document_ids": [
+        "PM-001",
+        "RB-001"
+      ],
+      "precision_at_2": 1.0,
+      "recall_at_2": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query_id": "Q-004",
+      "query": "upstream dependency response time problems",
+      "retrieved_document_ids": [
+        "RB-001",
+        "PM-001"
+      ],
+      "precision_at_2": 1.0,
+      "recall_at_2": 1.0,
+      "reciprocal_rank": 1.0
+    }
+  ]
+}
