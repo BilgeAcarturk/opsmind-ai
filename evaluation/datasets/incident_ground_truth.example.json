@@ -1,0 +1,16 @@
+
+{
+  "dataset_version": "0.1.0",
+  "cases": [
+    {
+      "incident_id": "INC-001",
+      "root_cause_category": "dependency_timeout",
+      "root_cause_description": "External payment provider timeout",
+      "relevant_evidence_ids": [
+        "EV-001",
+        "EV-004"
+      ],
+      "split": "development"
+    }
+  ]
+}
