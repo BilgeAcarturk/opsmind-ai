@@ -1,0 +1,43 @@
+
+{
+  "dataset_version": "0.4.0-dev",
+  "label_level": "document",
+  "cases": [
+    {
+      "query_id": "T-001",
+      "query": "card payments are being rejected due to excessive transaction volume",
+      "relevant_document_ids": ["RB-004"],
+      "service_id": null
+    },
+    {
+      "query_id": "T-002",
+      "query": "checkout stopped working after credentials were replaced",
+      "relevant_document_ids": ["RB-003"],
+      "service_id": null
+    },
+    {
+      "query_id": "T-003",
+      "query": "backend workers fail to return SQL connections to the pool",
+      "relevant_document_ids": ["RB-005", "RB-002"],
+      "service_id": null
+    },
+    {
+      "query_id": "T-004",
+      "query": "release introduced incorrect environment settings",
+      "relevant_document_ids": ["RB-008"],
+      "service_id": null
+    },
+    {
+      "query_id": "T-005",
+      "query": "gateway cannot reach backend before request deadline",
+      "relevant_document_ids": ["RB-007"],
+      "service_id": null
+    },
+    {
+      "query_id": "T-006",
+      "query": "unstable network causes dropped TCP segments and retransmissions",
+      "relevant_document_ids": ["RB-006"],
+      "service_id": null
+    }
+  ]
+}

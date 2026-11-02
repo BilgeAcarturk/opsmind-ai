@@ -145,3 +145,72 @@ def test_hybrid_deterministic():
     second = hybrid.search("payment")
 
     assert first == second
+
+
+def test_weighted_rrf_changes_ranking():
+    rankings = [
+        ["A", "B"],
+        ["B", "A"],
+    ]
+
+    scores = reciprocal_rank_fusion(
+        rankings,
+        weights=[0.2, 0.8],
+    )
+
+    assert scores["B"] > scores["A"]
+
+
+def test_equal_weights_preserve_original_rrf():
+    rankings = [["A", "B"], ["B", "C"]]
+
+    original = reciprocal_rank_fusion(rankings)
+    weighted = reciprocal_rank_fusion(
+        rankings,
+        weights=[1.0, 1.0],
+    )
+
+    assert original == weighted
+
+
+def test_invalid_rrf_weights():
+    with pytest.raises(ValueError):
+        reciprocal_rank_fusion(
+            [["A"], ["B"]],
+            weights=[1.0],
+        )
+
+    with pytest.raises(ValueError):
+        reciprocal_rank_fusion(
+            [["A"], ["B"]],
+            weights=[0.0, 0.0],
+        )
+
+    with pytest.raises(ValueError):
+        reciprocal_rank_fusion(
+            [["A"], ["B"]],
+            weights=[float("nan"), 1.0],
+        )
+
+
+def test_duplicate_document_not_double_counted():
+    scores = reciprocal_rank_fusion(
+        [["A", "A", "B"]],
+        k=60,
+    )
+
+    assert scores["A"] == pytest.approx(1 / 61)
+    assert scores["B"] == pytest.approx(1 / 63)
+
+
+def test_hybrid_with_semantic_preference():
+    hybrid = HybridRetriever(
+        bm25=FakeRetriever(["A", "B"]),
+        semantic=FakeRetriever(["B", "A"]),
+        bm25_weight=0.25,
+        semantic_weight=0.75,
+    )
+
+    results = hybrid.search("payment timeout")
+
+    assert results[0].chunk.document_id == "B"

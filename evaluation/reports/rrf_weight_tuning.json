@@ -1,0 +1,576 @@
+{
+  "purpose": "development_tuning",
+  "dataset_hash": "eeebbefefeb01104b4161e1ba9f9346c9260d92a885c4a15b526353e71b07c6e",
+  "config_hash": "62fd7deb6e0de282e4934100b82d80b025645f42181b0012f4ae22db57c2942d",
+  "evaluation_hash": "fda16727ff921b760fbb09e6b868aad5889c5b91bdfb1c939c7783c585587479",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "candidate_k": 20,
+  "rrf_k": 60,
+  "experiments": [
+    {
+      "bm25_weight": 1.0,
+      "semantic_weight": 0.0,
+      "metrics": {
+        "precision_at_2": 0.3333333333333333,
+        "recall_at_2": 0.5833333333333334,
+        "mrr": 0.6722222222222222,
+        "cases": [
+          {
+            "query_id": "T-001",
+            "retrieved_ids": [
+              "RB-001",
+              "RB-005",
+              "RB-003",
+              "RB-007",
+              "RB-004",
+              "PM-001",
+              "RB-002",
+              "RB-006",
+              "RB-008"
+            ],
+            "precision_at_k": 0.0,
+            "recall_at_k": 0.0,
+            "rr": 0.2
+          },
+          {
+            "query_id": "T-002",
+            "retrieved_ids": [
+              "RB-003",
+              "RB-004",
+              "PM-001",
+              "RB-001",
+              "RB-002",
+              "RB-005",
+              "RB-006",
+              "RB-007",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-003",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-005",
+              "RB-002",
+              "RB-001",
+              "RB-003",
+              "PM-001",
+              "RB-008",
+              "RB-004",
+              "RB-006"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 0.5,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-004",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-005",
+              "RB-008",
+              "RB-001",
+              "PM-001",
+              "RB-002",
+              "RB-003",
+              "RB-004",
+              "RB-007"
+            ],
+            "precision_at_k": 0.0,
+            "recall_at_k": 0.0,
+            "rr": 0.3333333333333333
+          },
+          {
+            "query_id": "T-005",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-006",
+              "RB-002",
+              "RB-005",
+              "RB-001",
+              "PM-001",
+              "RB-004",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-006",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-004",
+              "RB-002",
+              "RB-003",
+              "RB-008",
+              "RB-007",
+              "PM-001",
+              "RB-005",
+              "RB-001"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "bm25_weight": 0.75,
+      "semantic_weight": 0.25,
+      "metrics": {
+        "precision_at_2": 0.5,
+        "recall_at_2": 0.8333333333333334,
+        "mrr": 0.7916666666666666,
+        "cases": [
+          {
+            "query_id": "T-001",
+            "retrieved_ids": [
+              "RB-001",
+              "RB-005",
+              "RB-003",
+              "RB-004",
+              "RB-007",
+              "PM-001",
+              "RB-002",
+              "RB-006",
+              "RB-008"
+            ],
+            "precision_at_k": 0.0,
+            "recall_at_k": 0.0,
+            "rr": 0.25
+          },
+          {
+            "query_id": "T-002",
+            "retrieved_ids": [
+              "RB-003",
+              "RB-004",
+              "RB-001",
+              "RB-006",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-003",
+            "retrieved_ids": [
+              "RB-005",
+              "RB-002",
+              "RB-007",
+              "RB-001",
+              "RB-003",
+              "PM-001",
+              "RB-008",
+              "RB-006",
+              "RB-004"
+            ],
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-004",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-008",
+              "RB-005",
+              "RB-001",
+              "RB-003",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-004"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-005",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-006",
+              "RB-002",
+              "RB-001",
+              "RB-005",
+              "PM-001",
+              "RB-004",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-006",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-004",
+              "RB-002",
+              "RB-003",
+              "RB-007",
+              "PM-001",
+              "RB-008",
+              "RB-001",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "bm25_weight": 0.5,
+      "semantic_weight": 0.5,
+      "metrics": {
+        "precision_at_2": 0.5833333333333334,
+        "recall_at_2": 1.0,
+        "mrr": 0.8333333333333334,
+        "cases": [
+          {
+            "query_id": "T-001",
+            "retrieved_ids": [
+              "RB-001",
+              "RB-004",
+              "RB-003",
+              "RB-005",
+              "RB-007",
+              "PM-001",
+              "RB-002",
+              "RB-006",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-002",
+            "retrieved_ids": [
+              "RB-003",
+              "RB-004",
+              "RB-001",
+              "RB-006",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-003",
+            "retrieved_ids": [
+              "RB-002",
+              "RB-005",
+              "RB-003",
+              "RB-001",
+              "RB-007",
+              "PM-001",
+              "RB-008",
+              "RB-006",
+              "RB-004"
+            ],
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-004",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-008",
+              "RB-005",
+              "RB-001",
+              "RB-003",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-004"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-005",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-006",
+              "RB-001",
+              "RB-004",
+              "RB-002",
+              "PM-001",
+              "RB-005",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-006",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-002",
+              "RB-004",
+              "PM-001",
+              "RB-001",
+              "RB-007",
+              "RB-003",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "bm25_weight": 0.25,
+      "semantic_weight": 0.75,
+      "metrics": {
+        "precision_at_2": 0.5833333333333334,
+        "recall_at_2": 1.0,
+        "mrr": 0.9166666666666666,
+        "cases": [
+          {
+            "query_id": "T-001",
+            "retrieved_ids": [
+              "RB-001",
+              "RB-004",
+              "RB-003",
+              "RB-005",
+              "RB-007",
+              "PM-001",
+              "RB-002",
+              "RB-006",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-002",
+            "retrieved_ids": [
+              "RB-003",
+              "RB-004",
+              "RB-001",
+              "RB-006",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-003",
+            "retrieved_ids": [
+              "RB-002",
+              "RB-005",
+              "RB-003",
+              "PM-001",
+              "RB-001",
+              "RB-007",
+              "RB-008",
+              "RB-006",
+              "RB-004"
+            ],
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-004",
+            "retrieved_ids": [
+              "RB-008",
+              "RB-006",
+              "RB-005",
+              "RB-001",
+              "RB-003",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-004"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-005",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-004",
+              "RB-001",
+              "PM-001",
+              "RB-006",
+              "RB-002",
+              "RB-005",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-006",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-001",
+              "RB-002",
+              "PM-001",
+              "RB-007",
+              "RB-004",
+              "RB-005",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "bm25_weight": 0.0,
+      "semantic_weight": 1.0,
+      "metrics": {
+        "precision_at_2": 0.5833333333333334,
+        "recall_at_2": 1.0,
+        "mrr": 0.9166666666666666,
+        "cases": [
+          {
+            "query_id": "T-001",
+            "retrieved_ids": [
+              "RB-001",
+              "RB-004",
+              "PM-001",
+              "RB-003",
+              "RB-002",
+              "RB-005",
+              "RB-006",
+              "RB-008",
+              "RB-007"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 0.5
+          },
+          {
+            "query_id": "T-002",
+            "retrieved_ids": [
+              "RB-003",
+              "RB-001",
+              "RB-006",
+              "PM-001",
+              "RB-002",
+              "RB-004",
+              "RB-007",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-003",
+            "retrieved_ids": [
+              "RB-002",
+              "RB-005",
+              "RB-003",
+              "PM-001",
+              "RB-001",
+              "RB-006",
+              "RB-008",
+              "RB-004",
+              "RB-007"
+            ],
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-004",
+            "retrieved_ids": [
+              "RB-008",
+              "RB-006",
+              "RB-003",
+              "PM-001",
+              "RB-005",
+              "RB-002",
+              "RB-001",
+              "RB-007",
+              "RB-004"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-005",
+            "retrieved_ids": [
+              "RB-007",
+              "RB-004",
+              "RB-001",
+              "PM-001",
+              "RB-003",
+              "RB-006",
+              "RB-002",
+              "RB-008",
+              "RB-005"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          },
+          {
+            "query_id": "T-006",
+            "retrieved_ids": [
+              "RB-006",
+              "RB-001",
+              "PM-001",
+              "RB-002",
+              "RB-007",
+              "RB-005",
+              "RB-004",
+              "RB-003",
+              "RB-008"
+            ],
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "rr": 1.0
+          }
+        ]
+      }
+    }
+  ]
+}
