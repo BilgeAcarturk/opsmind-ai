@@ -1,0 +1,72 @@
+{
+  "dataset_version": "0.3.0",
+  "label_level": "document",
+  "cases": [
+    {
+      "query_id": "V3-001",
+      "query": "payment API keys stopped working after rotation",
+      "relevant_document_ids": [
+        "RB-003"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-002",
+      "query": "payment gateway is rejecting too many requests",
+      "relevant_document_ids": [
+        "RB-004"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-003",
+      "query": "database sessions are not released by application code",
+      "relevant_document_ids": [
+        "RB-005",
+        "RB-002"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-004",
+      "query": "intermittent connectivity and TCP retransmissions",
+      "relevant_document_ids": [
+        "RB-006"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-005",
+      "query": "reverse proxy returns 504 waiting for upstream",
+      "relevant_document_ids": [
+        "RB-007"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-006",
+      "query": "errors started immediately after a new release",
+      "relevant_document_ids": [
+        "RB-008"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-007",
+      "query": "third party payment processor stopped responding",
+      "relevant_document_ids": [
+        "RB-001",
+        "PM-001"
+      ],
+      "service_id": null
+    },
+    {
+      "query_id": "V3-008",
+      "query": "payment requests fail because tokens are expired",
+      "relevant_document_ids": [
+        "RB-003"
+      ],
+      "service_id": "payment-service"
+    }
+  ]
+}

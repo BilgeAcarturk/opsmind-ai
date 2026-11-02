@@ -1,3 +1,4 @@
+import argparse
 import json
 from pathlib import Path
 
@@ -68,12 +69,34 @@ def evaluate(retriever, dataset, chunk_count, k=2):
 
 
 def main():
-    documents = load_documents(ROOT / "data/samples/knowledge_documents.json")
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--dataset",
+        default="retrieval_queries.json",
+        choices=[
+            "retrieval_queries.json",
+            "retrieval_queries_hard.json",
+            "retrieval_queries_v3.json",
+        ],
+    )
+
+    parser.add_argument(
+        "--documents",
+        default="knowledge_documents.json",
+        choices=[
+            "knowledge_documents.json",
+            "knowledge_documents_v3.json",
+        ],
+    )
+
+    args = parser.parse_args()
+
+    documents = load_documents(ROOT / "data" / "samples" / args.documents)
 
     raw_dataset = json.loads(
-        (ROOT / "evaluation/datasets/retrieval_queries.json").read_text(
-            encoding="utf-8"
-        )
+        (ROOT / "evaluation" / "datasets" / args.dataset).read_text(encoding="utf-8")
     )
 
     dataset = RetrievalDataset.model_validate(raw_dataset)
@@ -112,7 +135,18 @@ def main():
 
         print(f"{metric}: keyword={keyword_value:.3f} | semantic={semantic_value:.3f}")
 
-    output_path = ROOT / "evaluation/reports/retrieval_comparison.json"
+    report_name = (
+        "retrieval_comparison.json"
+        if args.dataset == "retrieval_queries.json"
+        else (
+            "retrieval_comparison_hard.json"
+            if args.dataset == "retrieval_queries_hard.json"
+            else "retrieval_comparison_v3.json"
+        )
+    )
+
+    output_path = ROOT / "evaluation" / "reports" / report_name
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     output_path.write_text(

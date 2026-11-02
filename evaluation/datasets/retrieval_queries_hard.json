@@ -1,0 +1,43 @@
+
+{
+  "dataset_version": "0.2.0",
+  "label_level": "document",
+  "cases": [
+    {
+      "query_id": "H-001",
+      "query": "external payment gateway stopped responding",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": "payment-service"
+    },
+    {
+      "query_id": "H-002",
+      "query": "checkout transactions are stuck because the upstream processor is unresponsive",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": null
+    },
+    {
+      "query_id": "H-003",
+      "query": "the application cannot acquire free database connections",
+      "relevant_document_ids": ["RB-002"],
+      "service_id": null
+    },
+    {
+      "query_id": "H-004",
+      "query": "request retries amplify failures in a third party service",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": null
+    },
+    {
+      "query_id": "H-005",
+      "query": "slow transactions caused by exhausted connection capacity",
+      "relevant_document_ids": ["RB-002"],
+      "service_id": null
+    },
+    {
+      "query_id": "H-006",
+      "query": "how to investigate a vendor outage affecting card payments",
+      "relevant_document_ids": ["RB-001", "PM-001"],
+      "service_id": null
+    }
+  ]
+}

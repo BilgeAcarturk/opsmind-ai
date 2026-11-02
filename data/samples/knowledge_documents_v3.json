@@ -1,0 +1,83 @@
+[
+  {
+    "id": "RB-001",
+    "type": "runbook",
+    "title": "Payment Provider Timeout Troubleshooting",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "When payment requests fail due to upstream provider timeouts, inspect dependency latency, request timeout settings, and recent provider errors. Check whether retries are increasing downstream traffic. Review trace spans for external HTTP calls. Avoid increasing timeout limits without understanding the upstream failure.",
+    "version": 1
+  },
+  {
+    "id": "RB-002",
+    "type": "runbook",
+    "title": "Database Connection Pool Exhaustion",
+    "service_id": "order-service",
+    "source": "synthetic",
+    "content": "Database connection pool exhaustion may cause elevated API latency and request failures. Inspect active database connections, pool utilization, connection acquisition timeouts, and slow queries. Check for long-running transactions and leaked connections before changing pool size.",
+    "version": 1
+  },
+  {
+    "id": "PM-001",
+    "type": "postmortem",
+    "title": "Historical Payment Service Dependency Failure",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "A previous payment service incident caused elevated HTTP 5xx errors and increased request latency. Investigation found that an external payment provider experienced high response times. Application retries amplified the issue. Engineers mitigated the incident by adjusting retry behavior and coordinating with the provider.",
+    "version": 1
+  },
+  {
+    "id": "RB-003",
+    "type": "runbook",
+    "title": "Payment Authentication Failure",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "Payment requests may fail when API credentials are invalid, expired, or incorrectly rotated. Inspect HTTP 401 and 403 responses, authentication headers, token expiration, and secret versions. Check whether deployment configuration references outdated credentials. Credential failures are different from external provider timeouts.",
+    "version": 1
+  },
+  {
+    "id": "RB-004",
+    "type": "runbook",
+    "title": "Payment Provider Rate Limiting",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "Payment gateways may reject requests when API rate limits are exceeded. Inspect HTTP 429 responses, request quotas, burst traffic, and retry-after headers. Aggressive retries may increase throttling. Apply bounded exponential backoff and review provider quota policies. Rate limiting must be distinguished from authentication failures and network timeouts.",
+    "version": 1
+  },
+  {
+    "id": "RB-005",
+    "type": "runbook",
+    "title": "Database Connection Leak Investigation",
+    "service_id": "order-service",
+    "source": "synthetic",
+    "content": "Database connections may remain allocated when application code fails to release resources. Inspect connection lifetime, active sessions, pool utilization, and transaction boundaries. A connection leak can eventually exhaust the available pool. Identify leaked connections before increasing the maximum pool size.",
+    "version": 1
+  },
+  {
+    "id": "RB-006",
+    "type": "runbook",
+    "title": "Network Packet Loss Troubleshooting",
+    "service_id": "api-gateway",
+    "source": "synthetic",
+    "content": "Intermittent packet loss may cause network retransmissions, connection resets, and elevated request latency. Inspect network error counters, TCP retransmissions, dropped packets, and regional connectivity. Compare affected hosts and availability zones before changing application timeout settings.",
+    "version": 1
+  },
+  {
+    "id": "RB-007",
+    "type": "runbook",
+    "title": "API Gateway Upstream Timeout",
+    "service_id": "api-gateway",
+    "source": "synthetic",
+    "content": "API gateway requests may return HTTP 504 when upstream services fail to respond before the gateway deadline. Inspect upstream response latency, gateway timeout configuration, proxy logs, and distributed traces. Determine whether the delay originates in the gateway or a downstream dependency.",
+    "version": 1
+  },
+  {
+    "id": "RB-008",
+    "type": "runbook",
+    "title": "Deployment Configuration Regression",
+    "service_id": "payment-service",
+    "source": "synthetic",
+    "content": "An application deployment can introduce configuration regressions that cause immediate service errors. Compare environment variables, feature flags, secrets references, and deployed image versions. Correlate the error onset with deployment timestamps. Rollback decisions require operational approval and supporting evidence.",
+    "version": 1
+  }
+]

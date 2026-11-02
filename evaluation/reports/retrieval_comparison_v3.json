@@ -1,0 +1,261 @@
+{
+  "dataset_hash": "eeebbefefeb01104b4161e1ba9f9346c9260d92a885c4a15b526353e71b07c6e",
+  "config_hash": "62fd7deb6e0de282e4934100b82d80b025645f42181b0012f4ae22db57c2942d",
+  "evaluation_version": "0.3.0",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "keyword": {
+    "precision_at_2": 0.375,
+    "recall_at_2": 0.625,
+    "mrr": 0.68125,
+    "cases": [
+      {
+        "query_id": "V3-001",
+        "retrieved_ids": [
+          "RB-004",
+          "RB-003",
+          "RB-002",
+          "RB-001",
+          "RB-007",
+          "PM-001"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 0.5
+      },
+      {
+        "query_id": "V3-002",
+        "retrieved_ids": [
+          "RB-003",
+          "RB-001",
+          "RB-007",
+          "RB-004",
+          "PM-001"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "rr": 0.25
+      },
+      {
+        "query_id": "V3-003",
+        "retrieved_ids": [
+          "RB-005",
+          "PM-001",
+          "RB-006",
+          "RB-003",
+          "RB-002",
+          "RB-001",
+          "RB-008",
+          "RB-004"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 0.5,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-004",
+        "retrieved_ids": [
+          "RB-006",
+          "RB-007",
+          "RB-002",
+          "PM-001",
+          "RB-005",
+          "RB-008",
+          "RB-003",
+          "RB-001",
+          "RB-004"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-005",
+        "retrieved_ids": [
+          "RB-007",
+          "RB-001",
+          "RB-002"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-006",
+        "retrieved_ids": [
+          "RB-005",
+          "PM-001",
+          "RB-007",
+          "RB-001",
+          "RB-008",
+          "RB-004"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "rr": 0.2
+      },
+      {
+        "query_id": "V3-007",
+        "retrieved_ids": [
+          "RB-003",
+          "RB-001",
+          "RB-004",
+          "PM-001"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 0.5,
+        "rr": 0.5
+      },
+      {
+        "query_id": "V3-008",
+        "retrieved_ids": [
+          "RB-003",
+          "RB-001",
+          "RB-004",
+          "PM-001"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      }
+    ]
+  },
+  "semantic": {
+    "precision_at_2": 0.625,
+    "recall_at_2": 1.0,
+    "mrr": 1.0,
+    "cases": [
+      {
+        "query_id": "V3-001",
+        "retrieved_ids": [
+          "RB-003",
+          "RB-001",
+          "RB-004",
+          "PM-001",
+          "RB-007",
+          "RB-006",
+          "RB-002",
+          "RB-008",
+          "RB-005"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-002",
+        "retrieved_ids": [
+          "RB-004",
+          "RB-001",
+          "RB-003",
+          "PM-001",
+          "RB-007",
+          "RB-002",
+          "RB-006",
+          "RB-005",
+          "RB-008"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-003",
+        "retrieved_ids": [
+          "RB-005",
+          "RB-002",
+          "RB-006",
+          "RB-008",
+          "PM-001",
+          "RB-003",
+          "RB-004",
+          "RB-001",
+          "RB-007"
+        ],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-004",
+        "retrieved_ids": [
+          "RB-006",
+          "RB-001",
+          "PM-001",
+          "RB-007",
+          "RB-002",
+          "RB-005",
+          "RB-004",
+          "RB-003",
+          "RB-008"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-005",
+        "retrieved_ids": [
+          "RB-007",
+          "RB-001",
+          "PM-001",
+          "RB-004",
+          "RB-003",
+          "RB-006",
+          "RB-002",
+          "RB-008",
+          "RB-005"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-006",
+        "retrieved_ids": [
+          "RB-008",
+          "PM-001",
+          "RB-003",
+          "RB-001",
+          "RB-002",
+          "RB-005",
+          "RB-006",
+          "RB-007",
+          "RB-004"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-007",
+        "retrieved_ids": [
+          "RB-001",
+          "PM-001",
+          "RB-003",
+          "RB-004",
+          "RB-002",
+          "RB-007",
+          "RB-006",
+          "RB-005",
+          "RB-008"
+        ],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      },
+      {
+        "query_id": "V3-008",
+        "retrieved_ids": [
+          "RB-003",
+          "RB-001",
+          "RB-004",
+          "PM-001",
+          "RB-008"
+        ],
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "rr": 1.0
+      }
+    ]
+  }
+}
