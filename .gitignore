@@ -28,3 +28,6 @@ build/
 # Node.js
 node_modules/
 frontend/dist/
+
+# Local embedding cache
+.cache/
