@@ -113,3 +113,38 @@ def test_postgres_nullable_service_filter():
     assert unfiltered
     assert filtered
     assert all(item.chunk.service_id == "payment-service" for item in filtered)
+
+
+def test_retrieval_http_uses_connection_pool():
+    from fastapi.testclient import TestClient
+
+    from app.main import app
+
+    payload = {
+        "query": "payment API keys stopped working",
+        "top_k": 3,
+        "service_id": "payment-service",
+    }
+
+    with TestClient(app) as client:
+        first = client.post(
+            "/api/v1/retrieval/search",
+            json=payload,
+        )
+
+        second = client.post(
+            "/api/v1/retrieval/search",
+            json=payload,
+        )
+
+        assert first.status_code == 200
+        assert second.status_code == 200
+        assert first.json() == second.json()
+
+        pool = app.state.db_pool
+        assert pool is not None
+
+        stats = pool.get_stats()
+
+        assert stats["requests_num"] >= 2
+        assert stats["pool_size"] <= 5

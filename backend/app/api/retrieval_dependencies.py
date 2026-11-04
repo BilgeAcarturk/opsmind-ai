@@ -1,6 +1,10 @@
 from collections.abc import Iterator
 
-from app.core.database import get_connection
+import psycopg
+from fastapi import HTTPException, Request
+from psycopg_pool import PoolClosed, PoolTimeout
+
+from app.core.database_pool import get_or_create_pool
 from app.core.model_provider import (
     MODEL_NAME,
     get_embedding_model,
@@ -10,12 +14,23 @@ from app.retrieval.postgres_semantic import (
 )
 
 
-def get_postgres_retriever() -> Iterator[PostgresSemanticRetriever]:
+def get_postgres_retriever(
+    request: Request,
+) -> Iterator[PostgresSemanticRetriever]:
     model = get_embedding_model()
 
-    with get_connection() as connection:
-        yield PostgresSemanticRetriever(
-            connection=connection,
-            model=model,
-            model_id=MODEL_NAME,
-        )
+    try:
+        pool = get_or_create_pool(request)
+
+        with pool.connection(timeout=5.0) as connection:
+            yield PostgresSemanticRetriever(
+                connection=connection,
+                model=model,
+                model_id=MODEL_NAME,
+            )
+
+    except (psycopg.Error, PoolTimeout, PoolClosed) as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Database temporarily unavailable",
+        ) from exc
