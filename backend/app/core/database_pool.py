@@ -20,9 +20,7 @@ def create_database_pool() -> ConnectionPool:
     )
 
 
-def get_or_create_pool(request: Request) -> ConnectionPool:
-    app = request.app
-
+def get_or_create_pool_for_app(app) -> ConnectionPool:
     with app.state.db_pool_lock:
         pool = app.state.db_pool
 
@@ -38,6 +36,10 @@ def get_or_create_pool(request: Request) -> ConnectionPool:
             app.state.db_pool = pool
 
         return pool
+
+
+def get_or_create_pool(request: Request) -> ConnectionPool:
+    return get_or_create_pool_for_app(request.app)
 
 
 def initialize_pool_state(app) -> None:
