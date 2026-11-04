@@ -12,7 +12,9 @@ from app.core.database_pool import (
     get_or_create_pool_for_app,
     initialize_pool_state,
 )
+from app.core.logging_config import configure_logging
 from app.core.model_provider import get_embedding_model
+from app.core.request_logging import request_logging_middleware
 
 
 @asynccontextmanager
@@ -40,6 +42,10 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+
+configure_logging()
+
+app.middleware("http")(request_logging_middleware)
 
 
 app.include_router(incident_router)
