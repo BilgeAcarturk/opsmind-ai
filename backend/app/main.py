@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.incidents import router as incident_router
+from app.api.retrieval import router as retrieval_router
 
 app = FastAPI(
     title="OpsMind AI",
@@ -9,6 +10,7 @@ app = FastAPI(
 )
 
 app.include_router(incident_router)
+app.include_router(retrieval_router)
 
 
 @app.get("/health", tags=["Health"])
