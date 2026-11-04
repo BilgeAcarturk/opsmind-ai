@@ -1,0 +1,31 @@
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.7-pg17
+    container_name: opsmind-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: opsmind
+      POSTGRES_USER: opsmind
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+
+    ports:
+      - "127.0.0.1:5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/postgres/init:/docker-entrypoint-initdb.d:ro
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U opsmind -d opsmind
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  postgres_data:
